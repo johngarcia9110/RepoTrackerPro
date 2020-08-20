@@ -17,10 +17,10 @@ export const createLocalRepoList = () => {
 };
 
 export const getReposFromLocal = () => {
-  let { repoList } = JSON.parse(localStorage.getItem("repoTrackerPro"));
-  if (!repoList) {
+  const localData = localStorage.getItem("repoTrackerPro");
+  if (!localData) {
     createLocalRepoList();
     return [];
   }
-  return repoList;
+  return JSON.parse(localData).repoList;
 };

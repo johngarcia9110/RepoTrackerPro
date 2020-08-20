@@ -67,6 +67,11 @@ export const getUpdatedInfo = async (repo) => {
 
 export const updateRepoListData = (repoList) => async (dispatch) => {
   const updatedRepoList = [];
+  console.log(repoList);
+  if (repoList.length === 0) {
+    dispatch(setRepoData(updatedRepoList));
+    return;
+  }
   for (const repo of repoList) {
     const updatedInfo = await getUpdatedInfo(repo);
     updatedRepoList.push(updatedInfo);
