@@ -102,7 +102,7 @@ const RepoSearch = ({ handleAddRepoToList, repoList }) => {
             <h3>Results</h3>
             <div className="inner">
               {searchResults.map((result) => (
-                <div className="result">
+                <div className="result" key={result.id}>
                   <div className="result-content">
                     {result.owner.avatar_url && (
                       <img
